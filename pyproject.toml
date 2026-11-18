@@ -1,0 +1,28 @@
+[project]
+name = "lab-python-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "VuAnh183", email = "dinhvuanh2708@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+]
+
+[project.scripts]
+lab-python-app = "lab_python_app:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "--cov=registration --cov-report=term-missing"
+
